@@ -1,15 +1,15 @@
 <template>
   <div class="app-container">
     <!-- 输入表单 -->
-    <el-form label-width="120px">
-      <el-form-item label="广告推荐名称">
+    <el-form label-width="140px">
+      <el-form-item label="Ads name">
         <el-input v-model="ad.title" />
       </el-form-item>
       <!-- 推荐位 -->
-      <el-form-item label="推荐位">
+      <el-form-item label="Recommend">
         <el-select
           v-model="ad.typeId"
-          placeholder="请选择">
+          placeholder="Please select">
           <el-option
             v-for="adType in adTypeList"
             :key="adType.id"
@@ -17,10 +17,10 @@
             :value="adType.id"/>
         </el-select>
       </el-form-item>
-      <el-form-item label="排序">
+      <el-form-item label="Sort">
         <el-input-number v-model="ad.sort" :min="0"/>
       </el-form-item>
-      <el-form-item label="广告图片">
+      <el-form-item label="Ad imange">
         <el-upload
           :on-success="handleAvatarSuccess"
           :on-error="handleAvatarError"
@@ -30,17 +30,17 @@
           :file-list="fileList"
           :action="BASE_API+'/admin/oss/file/upload?module=ad'"
           list-type="picture">
-          <el-button size="small" type="primary">点击上传</el-button>
+          <el-button size="small" type="primary">Upload</el-button>
         </el-upload>
       </el-form-item>
-      <el-form-item label="背景颜色">
+      <el-form-item label="Background color">
         <el-color-picker v-model="ad.color"/>
       </el-form-item>
-      <el-form-item label="链接地址">
+      <el-form-item label="Link">
         <el-input v-model="ad.linkUrl" />
       </el-form-item>
       <el-form-item>
-        <el-button :disabled="saveBtnDisabled" type="primary" @click="saveOrUpdate()">保存</el-button>
+        <el-button :disabled="saveBtnDisabled" type="primary" @click="saveOrUpdate()">Save</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -119,7 +119,7 @@ export default {
 
     // 上传多于一个文件
     handleUploadExceed(files, fileList) {
-      this.$message.warning('想要重新上传图片，请先删除已上传的视频')
+      this.$message.warning('Please delte the previous video before upload the image')
     },
 
     // 上传校验
@@ -128,10 +128,10 @@ export default {
       const isLt2M = file.size / 1024 / 1024 < 2
 
       if (!isJPG) {
-        this.$message.error('上传头像图片只能是 JPG 格式!')
+        this.$message.error('Image must be JPG format')
       }
       if (!isLt2M) {
-        this.$message.error('上传头像图片大小不能超过 2MB!')
+        this.$message.error('Image cannot more than 2MB')
       }
       return isJPG && isLt2M
     },
@@ -145,14 +145,14 @@ export default {
         // 强制重新渲染
         // this.$forceUpdate()
       } else {
-        this.$message.error('上传失败1')
+        this.$message.error('Upload failed1')
       }
     },
 
     // 错误处理
     handleAvatarError() {
       console.log('error')
-      this.$message.error('上传失败2')
+      this.$message.error('Upload failed2')
     }
   }
 }

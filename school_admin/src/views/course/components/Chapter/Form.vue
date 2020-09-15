@@ -1,18 +1,18 @@
 <template>
 
   <!-- 添加和修改章节表单 -->
-  <el-dialog :visible="dialogVisible" title="添加章节" @close="close()">
+  <el-dialog :visible="dialogVisible" title="Add chapter" @close="close()">
     <el-form :model="chapter" label-width="120px">
-      <el-form-item label="章节标题">
+      <el-form-item label="Chapter title">
         <el-input v-model="chapter.title"/>
       </el-form-item>
-      <el-form-item label="章节排序">
+      <el-form-item label="Chapter order">
         <el-input-number v-model="chapter.sort" :min="0"/>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="close()">取 消</el-button>
-      <el-button type="primary" @click="saveOrUpdate()">确 定</el-button>
+      <el-button @click="close()">Cancel</el-button>
+      <el-button type="primary" @click="saveOrUpdate()">Confirm</el-button>
     </div>
   </el-dialog>
 

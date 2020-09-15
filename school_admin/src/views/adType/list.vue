@@ -4,7 +4,7 @@
     <!-- 工具按钮 -->
     <div style="margin-bottom: 10px">
       <router-link to="/ad/type-create">
-        <el-button type="primary" size="mini" icon="el-icon-edit">添加推荐位</el-button>
+        <el-button type="primary" size="mini" icon="el-icon-edit">Add Recommend</el-button>
       </router-link>
     </div>
 
@@ -18,14 +18,14 @@
           {{ (page - 1) * limit + scope.$index + 1 }}
         </template>
       </el-table-column>
-      <el-table-column prop="title" label="推荐位名称" />
+      <el-table-column prop="title" label="Recommend Nmae" />
 
-      <el-table-column label="操作" width="200" align="center">
+      <el-table-column label="Operation" width="200" align="center">
         <template slot-scope="scope">
           <router-link :to="'/ad/type-edit/'+scope.row.id">
-            <el-button type="primary" size="mini" icon="el-icon-edit">修改</el-button>
+            <el-button type="primary" size="mini" icon="el-icon-edit">Edit</el-button>
           </router-link>
-          <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeById(scope.row.id)">删除</el-button>
+          <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeById(scope.row.id)">Delete</el-button>
         </template>
       </el-table-column>
     </el-table>

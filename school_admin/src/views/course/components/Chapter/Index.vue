@@ -3,7 +3,7 @@
     <!-- 章节列表 -->
     <!-- 添加章节按钮 -->
     <div>
-      <el-button type="primary" @click="addChapter()">添加章节</el-button>
+      <el-button type="primary" @click="addChapter()">Add chapter</el-button>
     </div>
 
     <!-- 章节列表 -->
@@ -11,21 +11,21 @@
       <li v-for="chapter in chapterList" :key="chapter.id">
         <p>{{ chapter.title }}
           <span class="acts">
-            <el-button type="text" @click="addVideo(chapter.id)">添加课时</el-button>
-            <el-button type="text" @click="editChapter(chapter.id)">编辑</el-button>
-            <el-button type="text" @click="removeChapterById(chapter.id)">删除</el-button>
+            <el-button type="text" @click="addVideo(chapter.id)">Add unit</el-button>
+            <el-button type="text" @click="editChapter(chapter.id)">Edit</el-button>
+            <el-button type="text" @click="removeChapterById(chapter.id)">Delete</el-button>
           </span>
         </p>
         <ul class="chapterList videoList">
           <li v-for="video in chapter.children" :key="video.id">
             <p>{{ video.title }}
               <el-tag v-if="!video.videoSourceId" size="mini" type="danger">
-                {{ '尚未上传视频' }}
+                {{ 'Video not uploaded' }}
               </el-tag>
               <span class="acts">
                 <el-tag v-if="video.free" size="mini" type="success">{{ '免费观看' }}</el-tag>
-                <el-button type="text" @click="editVideo(chapter.id, video.id)">编辑</el-button>
-                <el-button type="text" @click="removeVideoById(video.id)">删除</el-button>
+                <el-button type="text" @click="editVideo(chapter.id, video.id)">Edit</el-button>
+                <el-button type="text" @click="removeVideoById(video.id)">Delete</el-button>
               </span>
             </p>
           </li>
@@ -40,8 +40,8 @@
     <video-form ref="videoForm" />
 
     <div style="text-align:center">
-      <el-button type="primary" @click="prev()">上一步</el-button>
-      <el-button type="primary" @click="next()">下一步</el-button>
+      <el-button type="primary" @click="prev()">Last</el-button>
+      <el-button type="primary" @click="next()">Next</el-button>
     </div>
 
   </div>

@@ -3,7 +3,7 @@
 
     <el-input
       v-model="filterText"
-      placeholder="输入关键字进行过滤"/>
+      placeholder="Enter keyword to filter"/>
 
     <el-tree
       ref="tree"

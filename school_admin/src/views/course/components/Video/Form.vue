@@ -1,21 +1,21 @@
 <template>
   <!-- 添加和修改课时表单 -->
-  <el-dialog :visible="dialogVisible" title="添加课时" @close="close()">
+  <el-dialog :visible="dialogVisible" title="Add unit" @close="close()">
     <el-form :model="video" label-width="120px">
-      <el-form-item label="课时标题">
+      <el-form-item label="Unit title">
         <el-input v-model="video.title"/>
       </el-form-item>
-      <el-form-item label="课时排序">
+      <el-form-item label="Unit order">
         <el-input-number v-model="video.sort" :min="0" />
       </el-form-item>
-      <el-form-item label="是否免费">
+      <el-form-item label="Free?>">
         <el-radio-group v-model="video.free">
-          <el-radio :label="true">免费</el-radio>
-          <el-radio :label="false">默认</el-radio>
+          <el-radio :label="true">Free</el-radio>
+          <el-radio :label="false">Default</el-radio>
         </el-radio-group>
       </el-form-item>
       <!-- 上传视频 -->
-      <el-form-item label="上传视频">
+      <el-form-item label="Upload video">
         <el-upload
           ref="upload"
           :auto-upload="false"
@@ -27,19 +27,19 @@
           :file-list="fileList"
           :limit="1"
           action="http://127.0.0.1:8130/admin/vod/media/upload">
-          <el-button slot="trigger" size="small" type="primary">选择视频</el-button>
+          <el-button slot="trigger" size="small" type="primary">Select video</el-button>
           <el-button
             :disabled="uploadBtnDisabled"
             style="margin-left: 10px;"
             size="small"
             type="success"
-            @click="submitUpload()">上传</el-button>
+            @click="submitUpload()">Upload</el-button>
         </el-upload>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="close()">取 消</el-button>
-      <el-button type="primary" @click="saveOrUpdate()">确 定</el-button>
+      <el-button @click="close()">Cancel</el-button>
+      <el-button type="primary" @click="saveOrUpdate()">Confirm</el-button>
     </div>
   </el-dialog>
 </template>

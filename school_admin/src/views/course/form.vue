@@ -2,11 +2,11 @@
   <div class="app-container">
 
     <!-- 步骤导航 -->
-    <h2 style="text-align: center;">发布新课程</h2>
+    <h2 style="text-align: center;">Publish Course</h2>
     <el-steps :active="active" finish-status="success" simple style="margin-bottom: 40px">
-      <el-step title="填写课程基本信息" />
-      <el-step title="创建课程大纲" />
-      <el-step title="发布课程" />
+      <el-step title="Course info" />
+      <el-step title="Create syllabus" />
+      <el-step title="Publish course" />
     </el-steps>
 
     <!-- 步骤内容 -->

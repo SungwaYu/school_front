@@ -4,13 +4,13 @@
     <!-- 课程信息表单 -->
     <el-form label-width="120px">
 
-      <el-form-item label="课程标题">
-        <el-input v-model="courseInfo.title" placeholder=" 示例：机器学习项目课：从基础到搭建项目视频课程。专业名称注意大小写"/>
+      <el-form-item label="Course title">
+        <el-input v-model="courseInfo.title" placeholder=" Example: Java"/>
       </el-form-item>
 
       <!-- 课程讲师 -->
-      <el-form-item label="课程讲师">
-        <el-select v-model="courseInfo.teacherId" placeholder="请选择">
+      <el-form-item label="Course teacher">
+        <el-select v-model="courseInfo.teacherId" placeholder="Please select">
           <el-option
             v-for="teacher in teacherList"
             :key="teacher.id"
@@ -20,11 +20,11 @@
       </el-form-item>
 
       <!-- 所属分类 -->
-      <el-form-item label="课程分类">
+      <el-form-item label="Course type">
         <!-- 一级分类 -->
         <el-select
           v-model="courseInfo.subjectParentId"
-          placeholder="请选择"
+          placeholder="Please select"
           @change="subjectChanged">
           <el-option
             v-for="subject in subjectList"
@@ -36,7 +36,7 @@
         <!-- 二级分类 -->
         <el-select
           v-model="courseInfo.subjectId"
-          placeholder="请选择">
+          placeholder="Please select">
           <el-option
             v-for="subject in subjectLevelTwoList"
             :key="subject.id"
@@ -46,17 +46,17 @@
 
       </el-form-item>
 
-      <el-form-item label="总课时">
+      <el-form-item label="Total units">
         <el-input-number :min="0" v-model="courseInfo.lessonNum" controls-position="right" placeholder="请填写课程的总课时数"/>
       </el-form-item>
 
       <!-- 课程简介-->
-      <el-form-item label="课程简介">
+      <el-form-item label="Course intro">
         <tinymce :height="300" v-model="courseInfo.description"/>
       </el-form-item>
 
       <!-- 课程封面 -->
-      <el-form-item label="课程封面">
+      <el-form-item label="Course cover">
         <el-upload
           :show-file-list="false"
           :on-success="handleCoverSuccess"
@@ -69,13 +69,13 @@
         </el-upload>
       </el-form-item>
 
-      <el-form-item label="课程价格">
-        <el-input-number :min="0" v-model="courseInfo.price" controls-position="right" placeholder="免费课程请设置为0元"/> 元
+      <el-form-item label="Course price">
+        <el-input-number :min="0" v-model="courseInfo.price" controls-position="right" placeholder="0 means free"/> dollar
       </el-form-item>
     </el-form>
 
     <div style="text-align:center">
-      <el-button :disabled="saveBtnDisabled" type="primary" @click="saveAndNext()">保存并下一步</el-button>
+      <el-button :disabled="saveBtnDisabled" type="primary" @click="saveAndNext()">Save & Next</el-button>
     </div>
   </div>
 </template>

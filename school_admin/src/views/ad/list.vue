@@ -4,7 +4,7 @@
     <!-- 工具按钮 -->
     <div style="margin-bottom: 10px">
       <router-link to="/ad/create">
-        <el-button type="primary" size="mini" icon="el-icon-edit">添加广告推荐</el-button>
+        <el-button type="primary" size="mini" icon="el-icon-edit">Add Recommends</el-button>
       </router-link>
     </div>
 
@@ -19,16 +19,16 @@
         </template>
       </el-table-column>
 
-      <el-table-column prop="type" label="推荐位名称" />
-      <el-table-column prop="title" label="广告名称" />
-      <el-table-column prop="sort" label="排序" />
+      <el-table-column prop="type" label="Rocommend name" />
+      <el-table-column prop="title" label="Ad name" />
+      <el-table-column prop="sort" label="Sort" />
 
-      <el-table-column label="操作" width="200" align="center">
+      <el-table-column label="Operation" width="200" align="center">
         <template slot-scope="scope">
           <router-link :to="'/ad/edit/'+scope.row.id">
-            <el-button type="primary" size="mini" icon="el-icon-edit">修改</el-button>
+            <el-button type="primary" size="mini" icon="el-icon-edit">Edit</el-button>
           </router-link>
-          <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeById(scope.row.id)">删除</el-button>
+          <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeById(scope.row.id)">Delete</el-button>
         </template>
       </el-table-column>
     </el-table>

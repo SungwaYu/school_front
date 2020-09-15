@@ -6,21 +6,21 @@
         <el-date-picker
           v-model="searchObj.begin"
           type="date"
-          placeholder="选择开始日期"
+          placeholder="Please select starting date"
           value-format="yyyy-MM-dd" />
       </el-form-item>
       <el-form-item>
         <el-date-picker
           v-model="searchObj.end"
           type="date"
-          placeholder="选择截止日期"
+          placeholder="Please select ending date"
           value-format="yyyy-MM-dd" />
       </el-form-item>
       <el-button
         :disabled="btnDisabled"
         type="primary"
         icon="el-icon-search"
-        @click="showChart()">查询</el-button>
+        @click="showChart()">Search</el-button>
     </el-form>
 
     <el-row>

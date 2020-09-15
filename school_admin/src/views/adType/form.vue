@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <!-- 输入表单 -->
-    <el-form label-width="120px">
-      <el-form-item label="推荐位名称">
+    <el-form label-width="140px">
+      <el-form-item label="Recommend name">
         <el-input v-model="adType.title" />
       </el-form-item>
 
       <el-form-item>
-        <el-button :disabled="saveBtnDisabled" type="primary" @click="saveOrUpdate()">保存</el-button>
+        <el-button :disabled="saveBtnDisabled" type="primary" @click="saveOrUpdate()">Save</el-button>
       </el-form-item>
     </el-form>
   </div>

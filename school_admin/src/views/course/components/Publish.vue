@@ -6,16 +6,16 @@
       <img :src="coursePublish.cover">
       <div class="main">
         <h2>{{ coursePublish.title }}</h2>
-        <p class="gray"><span>共{{ coursePublish.lessonNum }}课时</span></p>
-        <p><span>所属分类：{{ coursePublish.subjectParentTitle }} — {{ coursePublish.subjectTitle }}</span></p>
-        <p>课程讲师：{{ coursePublish.teacherName }}</p>
-        <h3 class="red">￥{{ coursePublish.price }}</h3>
+        <p class="gray"><span>{{ coursePublish.lessonNum }}units in total</span></p>
+        <p><span>Type：{{ coursePublish.subjectParentTitle }} — {{ coursePublish.subjectTitle }}</span></p>
+        <p>Teacher{{ coursePublish.teacherName }}</p>
+        <h3 class="red">${{ coursePublish.price }}</h3>
       </div>
     </div>
 
     <div style="text-align:center">
-      <el-button type="primary" @click="prev()">上一步</el-button>
-      <el-button :disabled="publishBtnDisabled" type="primary" @click="publish()">发布课程</el-button>
+      <el-button type="primary" @click="prev()">Last</el-button>
+      <el-button :disabled="publishBtnDisabled" type="primary" @click="publish()">Publish</el-button>
     </div>
   </div>
 </template>
