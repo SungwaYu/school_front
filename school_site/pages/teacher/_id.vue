@@ -4,7 +4,7 @@
     <section class="container">
       <header class="comm-title">
         <h2 class="fl tac">
-          <span class="c-333">讲师介绍</span>
+          <span class="c-333">Intro</span>
         </h2>
       </header>
       <div class="t-infor-wrap">
@@ -17,7 +17,7 @@
             <h3 class="hLh30">
               <span class="fsize24 c-333">{{ teacher.name }}
                 &nbsp;
-                {{ teacher.level===1?'高级讲师':'首席讲师' }}
+                {{ teacher.level===1?'Experience':'Expert' }}
               </span>
             </h3>
             <section class="mt10">
@@ -36,7 +36,7 @@
         <div>
           <header class="comm-title all-teacher-title c-course-content">
             <h2 class="fl tac">
-              <span class="c-333">主讲课程</span>
+              <span class="c-333">Courses</span>
             </h2>
             <section class="c-tab-title">
               <a href="javascript: void(0)">&nbsp;</a>
@@ -45,7 +45,7 @@
           <!-- 无数据提示 开始-->
           <section v-if="courseList.length===0" class="no-data-wrap">
             <em class="icon30 no-data-ico">&nbsp;</em>
-            <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
+            <span class="c-666 fsize14 ml10 vam">No course is uploaded</span>
           </section>
           <!-- /无数据提示 结束-->
 
@@ -57,7 +57,7 @@
                   <section class="course-img">
                     <img :src="course.cover" class="img-responsive">
                     <div class="cc-mask">
-                      <a :href="'/course/'+course.id" title="开始学习" target="_blank" class="comm-btn c-btn-1">开始学习</a>
+                      <a :href="'/course/'+course.id" title="Start" target="_blank" class="comm-btn c-btn-1">Start</a>
                     </div>
                   </section>
                   <h3 class="hLh30 txtOf mt10">

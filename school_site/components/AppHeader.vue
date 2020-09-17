@@ -13,7 +13,7 @@
             <a>Home</a>
           </router-link>
           <router-link to="/course" tag="li" active-class="current">
-            <a>Sourse</a>
+            <a>Course</a>
           </router-link>
           <router-link to="/teacher" tag="li" active-class="current">
             <a>Teacher</a>

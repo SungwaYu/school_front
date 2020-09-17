@@ -51,7 +51,7 @@
                       <i class="c-fff fsize12 f-fA">Free</i>
                     </span>
                     <span v-else class="fr jgTag ">
-                      <i class="c-orange fsize12 f-fA"> ￥{{ course.price }}</i>
+                      <i class="c-orange fsize12 f-fA"> ${{ course.price }}</i>
                     </span>
                     <span class="fl jgAttr c-ccc f-fA">
                       <i class="c-999 f-fA">{{ course.viewCount }}Views</i>
@@ -64,7 +64,7 @@
               <div class="clear"/>
             </article>
             <section class="tac pt20">
-              <a href="#" title="全部课程" class="comm-btn c-btn-2">All Courses</a>
+              <a href="#" title="All Courses" class="comm-btn c-btn-2">All Courses</a>
             </section>
           </div>
         </section>
@@ -97,7 +97,7 @@
               <div class="clear"/>
             </article>
             <section class="tac pt20">
-              <a href="teacher" title="全部讲师" class="comm-btn c-btn-2">All Teacher</a>
+              <a href="teacher" title="All Teacher" class="comm-btn c-btn-2">All Teacher</a>
             </section>
           </div>
         </section>
@@ -116,6 +116,7 @@ export default {
     // 首页banner数据的获取
     const topBannerAdListResponse = await indexApi.getTopBannerAdList()
     const topBannerAdList = topBannerAdListResponse.data.items
+    console.log(topBannerAdListResponse)
 
     // 获取课程和讲师数据
     const indexDataResponse = await indexApi.getIndexData()

@@ -5,9 +5,9 @@
 
       <!-- 课程所属分类 开始 -->
       <section class="path-wrap txtOf hLh30">
-        <a href="/" title class="c-999 fsize14">首页</a>
+        <a href="/" title class="c-999 fsize14">Index</a>
         \
-        <a href="/course" title class="c-999 fsize14">课程列表</a>
+        <a href="/course" title class="c-999 fsize14">Course list</a>
         \
         <a :href="'/course?subjectParentId='+course.subjectLevelOneId" class="c-333 fsize14">{{ course.subjectLevelOne }}</a>
         \
@@ -28,11 +28,11 @@
               <span class="c-fff fsize24">{{ course.title }}</span>
             </h2>
             <section class="c-attr-jg">
-              <span class="c-fff">价格：</span>
-              <b class="c-yellow" style="font-size:24px;">￥{{ course.price }}</b>
+              <span class="c-fff">Price：</span>
+              <b class="c-yellow" style="font-size:24px;">${{ course.price }}</b>
             </section>
             <section class="c-attr-mt c-attr-undis">
-              <span class="c-fff fsize14">主讲： {{ course.teacherName }}&nbsp;&nbsp;&nbsp;</span>
+              <span class="c-fff fsize14">Teacher: {{ course.teacherName }}&nbsp;&nbsp;&nbsp;</span>
             </section>
 
             <section class="c-attr-mt of">
@@ -41,31 +41,31 @@
                 <a
                   style="cursor:pointer"
                   class="c-fff vam"
-                  title="取消收藏"
-                  @click="removeCollect(course.id)">已收藏</a>
+                  title="Unsave"
+                  @click="removeCollect(course.id)">Unsave</a>
               </span>
               <span v-else class="ml10 vam">
                 <em class="icon18 scIcon"/>
                 <span
                   style="cursor:pointer"
                   class="c-fff vam"
-                  title="收藏"
-                  @click="addCollect(course.id)" >收藏</span>
+                  title="Save"
+                  @click="addCollect(course.id)" >Save</span>
               </span>
             </section>
 
             <section v-if="isBuy || course.price === 0" class="c-attr-mt">
               <a
                 href="javascript:void(0)"
-                title="立即观看"
-                class="comm-btn c-btn-3">立即观看</a>
+                title="Watch now"
+                class="comm-btn c-btn-3">Watch now</a>
             </section>
             <section v-else class="c-attr-mt">
               <a
                 href="javascript:void(0)"
-                title="立即购买"
+                title="Buy now"
                 class="comm-btn c-btn-3"
-                @click="createOrder()">立即购买</a>
+                @click="createOrder()">Buy now</a>
             </section>
           </section>
         </aside>
@@ -74,7 +74,7 @@
             <li>
               <p>&nbsp;</p>
               <aside>
-                <span class="c-fff f-fM">购买数</span>
+                <span class="c-fff f-fM">Sold</span>
                 <br>
                 <h6 class="c-fff f-fM mt10">{{ course.buyCount }}</h6>
               </aside>
@@ -82,7 +82,7 @@
             <li>
               <p>&nbsp;</p>
               <aside>
-                <span class="c-fff f-fM">课时数</span>
+                <span class="c-fff f-fM">Unit</span>
                 <br>
                 <h6 class="c-fff f-fM mt10">{{ course.lessonNum }}</h6>
               </aside>
@@ -90,7 +90,7 @@
             <li>
               <p>&nbsp;</p>
               <aside>
-                <span class="c-fff f-fM">浏览数</span>
+                <span class="c-fff f-fM">Watched</span>
                 <br>
                 <h6 class="c-fff f-fM mt10">{{ course.viewCount }}</h6>
               </aside>
@@ -107,7 +107,7 @@
             <div class="i-box">
               <div>
                 <section id="c-i-tabTitle" class="c-infor-tabTitle c-tab-title">
-                  <a name="c-i" class="current" title="课程详情">课程详情</a>
+                  <a name="c-i" class="current" title="课程详情">Details</a>
                 </section>
               </div>
               <article class="ml10 mr10 pt20">
@@ -115,7 +115,7 @@
                 <!-- 课程详情介绍 开始 -->
                 <div>
                   <h6 class="c-i-content c-infor-title">
-                    <span>课程介绍</span>
+                    <span>Intro</span>
                   </h6>
                   <div class="course-txt-body-wrap">
                     <section class="course-txt-body" v-html="course.description">
@@ -129,7 +129,7 @@
                 <!-- 课程大纲 开始-->
                 <div class="mt50">
                   <h6 class="c-g-content c-infor-title">
-                    <span>课程大纲</span>
+                    <span>Syllabus</span>
                   </h6>
                   <section class="mt20">
                     <div class="lh-menu-wrap">
@@ -148,7 +148,7 @@
                                   :title="video.title"
                                   target="_blank">
                                   <span v-if="Number(course.price) !== 0 && video.free===true" class="fr">
-                                    <i class="free-icon vam mr10">免费试听</i>
+                                    <i class="free-icon vam mr10">Trial</i>
                                   </span>
                                   <em class="lh-menu-i-2 icon16 mr5">&nbsp;</em>{{ video.title }}
                                 </a>
@@ -158,7 +158,7 @@
                                   :title="video.title"
                                   target="_blank">
                                   <span v-if="Number(course.price) !== 0 && video.free===true" class="fr">
-                                    <i class="free-icon vam mr10">免费试听</i>
+                                    <i class="free-icon vam mr10">Trial</i>
                                   </span>
                                   <em class="lh-menu-i-2 icon16 mr5">&nbsp;</em>{{ video.title }}
                                 </a>
@@ -166,7 +166,7 @@
                                   v-else
                                   :title="video.title">
                                   <span v-if="Number(course.price) !== 0 && video.free===true" class="fr">
-                                    <i class="free-icon vam mr10">免费试听</i>
+                                    <i class="free-icon vam mr10">Trial</i>
                                   </span>
                                   <em class="lh-menu-i-2 icon16 mr5">&nbsp;</em>{{ video.title }}
                                 </a>
@@ -187,7 +187,7 @@
             <!-- 主讲讲师 开始-->
             <div>
               <section class="c-infor-tabTitle c-tab-title">
-                <a title href="javascript:void(0)">主讲讲师</a>
+                <a title href="javascript:void(0)">Teacher</a>
               </section>
               <section class="stud-act-list">
                 <ul style="height: auto;">

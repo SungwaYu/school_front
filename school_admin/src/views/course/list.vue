@@ -67,12 +67,12 @@
         <template slot-scope="scope">
           <a href="">{{ scope.row.title }}</a>
           <p>
-            分类：{{ scope.row.subjectParentTitle }} > {{ scope.row.subjectTitle }}
+            Type: {{ scope.row.subjectParentTitle }} > {{ scope.row.subjectTitle }}
           </p>
           <p>
-            课时：{{ scope.row.lessonNum }} /
-            浏览：{{ scope.row.viewCount }} /
-            付费学员：{{ scope.row.buyCount }}
+            Unit: {{ scope.row.lessonNum }} /
+            Watched: {{ scope.row.viewCount }} /
+            Sold: {{ scope.row.buyCount }}
           </p>
         </template>
       </el-table-column>
@@ -114,7 +114,7 @@
             <el-button type="primary" size="mini" icon="el-icon-edit">Edit</el-button>
           </router-link>
           <router-link :to="'/course/chapter/'+scope.row.id">
-            <el-button type="primary" size="mini" icon="el-icon-edit">Edit Syllabus</el-button>
+            <el-button type="primary" size="mini" icon="el-icon-edit">Syllabus</el-button>
           </router-link>
           <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeById(scope.row.id)">Delete</el-button>
         </template>

@@ -23,7 +23,7 @@
                 {{ 'Video not uploaded' }}
               </el-tag>
               <span class="acts">
-                <el-tag v-if="video.free" size="mini" type="success">{{ '免费观看' }}</el-tag>
+                <el-tag v-if="video.free" size="mini" type="success">{{ 'Free' }}</el-tag>
                 <el-button type="text" @click="editVideo(chapter.id, video.id)">Edit</el-button>
                 <el-button type="text" @click="removeVideoById(video.id)">Delete</el-button>
               </span>

@@ -8,7 +8,7 @@
       <el-form-item label="Unit order">
         <el-input-number v-model="video.sort" :min="0" />
       </el-form-item>
-      <el-form-item label="Free?>">
+      <el-form-item label="Free?">
         <el-radio-group v-model="video.free">
           <el-radio :label="true">Free</el-radio>
           <el-radio :label="false">Default</el-radio>
@@ -26,7 +26,7 @@
           :on-remove="handleOnRemove"
           :file-list="fileList"
           :limit="1"
-          action="http://127.0.0.1:8130/admin/vod/media/upload">
+          :action="BASE_API+'/admin/vod/media/upload'">
           <el-button slot="trigger" size="small" type="primary">Select video</el-button>
           <el-button
             :disabled="uploadBtnDisabled"
@@ -57,7 +57,8 @@ export default {
         free: false
       },
       fileList: [], // 上传文件列表
-      uploadBtnDisabled: false
+      uploadBtnDisabled: false,
+      BASE_API: process.env.BASE_API
     }
   },
 
